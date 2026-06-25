@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 
+import { Route as PatientEditRoute } from "@/routes/auth/dashboard/patients/$patientId/edit";
 import { patientWithDetailsOptions } from "../api/queries";
 import { genderOptions, maritalStatusOptions } from "../constants/patient-options";
 
@@ -54,14 +55,15 @@ export default function PatientDetail({ patientId }: PatientDetailProps) {
 									{genderOptions.find(o => o.value === patient.gender)?.label || patient.gender}
 								</span>
 								<span>•</span>
-								<Badge variant={patient.isActive ? "success" : "destructive"}>
+								<Badge variant={patient.isActive ? "default" : "destructive"}>
 									{patient.isActive ? "Active" : "Inactive"}
 								</Badge>
 							</div>
 						</div>
 						<Link
 							className='inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 font-medium text-primary-foreground text-sm hover:bg-primary/90'
-							to={`/dashboard/patients/${patientId}/edit`}
+							params={{ patientId }}
+							to={PatientEditRoute.id}
 						>
 							Edit Patient
 						</Link>

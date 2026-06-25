@@ -91,8 +91,6 @@ export const doctorListFilterSchema = z.object({
 	limit: z.number().default(10)
 });
 
-export type Doctor = z.infer<typeof doctorSchema>;
 export type CreateDoctorInput = z.infer<typeof createDoctorSchema>;
 export type UpdateDoctorInput = z.infer<typeof updateDoctorSchema>;
-export type WorkingDay = z.infer<typeof workingDaySchema>;
 export type DoctorListFilters = z.infer<typeof doctorListFilterSchema>;

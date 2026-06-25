@@ -1,9 +1,9 @@
 // src/features/dashboard/queries.ts
 
-import type { AlertType } from "#/db/schema";
 import type { Patient } from "@/db";
 import { queryKeys } from "@/lib/query-client";
 import { getDashboardUpcomingAppointments, getRecentEncounters, getRecentPatients } from "./functions";
+import type { AlertSeverity, AlertType, GrowthAlert } from "./types";
 
 type StatItem = {
 	label: string;
@@ -13,28 +13,8 @@ type StatItem = {
 	color?: string;
 };
 
-// Define WidgetGrowthAlert type for dashboard display
-type WidgetGrowthAlert = {
-	id: string;
-	type: AlertType;
-	severity: string;
-	message: string;
-	date: Date;
-	isResolved: boolean;
-	patient: {
-		id: string;
-		name: string;
-		initials: string;
-		age: string;
-	};
-	label: string;
-	metric: string;
-	value: string | number;
-	change?: number;
-	icon?: string;
-	color?: string;
-};
-
+// Define WidgetGrowthAlert as an alias for GrowthAlert — no extra fields needed
+type WidgetGrowthAlert = GrowthAlert;
 // Dashboard query options
 export const dashboardQueryOptions = () => ({
 	queryKey: queryKeys.dashboard.all,
@@ -171,22 +151,21 @@ async function fetchRecentPatients(): Promise<Patient[]> {
 	return result.patients;
 }
 
-async function fetchGrowthAlerts(): Promise<WidgetGrowthAlert[]> {
+async function fetchGrowthAlerts(): Promise<GrowthAlert[]> {
 	const encounters = await getRecentEncounters();
 	return encounters.map(
 		(enc): WidgetGrowthAlert => ({
 			id: enc.id,
-			type: "RAPID_WEIGHT_GAIN",
-			severity: "info",
+			type: "weight" as AlertType,
+			severity: "info" as AlertSeverity,
 			patient: {
 				id: enc.id,
 				name: `${enc.patientFirstName} ${enc.patientLastName}`.trim() || "Unknown",
 				initials: `${enc.patientFirstName?.[0] ?? ""}${enc.patientLastName?.[0] ?? ""}`.toUpperCase(),
 				age: ""
 			},
-			label: "Encounter",
-			metric: "WEIGHT",
-			value: enc.diagnosis ?? "—",
+ 			metric: "WEIGHT",
+			value: String(enc.diagnosis ?? "—"),
 			message: enc.diagnosis ?? "No diagnosis recorded",
 			date: new Date(enc.date),
 			isResolved: false

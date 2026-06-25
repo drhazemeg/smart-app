@@ -1,5 +1,10 @@
 // src/features/dashboard/components/GrowthAlertsWidget.tsx
 
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { Link } from "@tanstack/react-router";
 import { format } from "date-fns";
 import {
@@ -13,41 +18,11 @@ import {
 	TrendingUp,
 	User
 } from "lucide-react";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import type { AlertSeverity, AlertType, GrowthAlert } from "../types";
 
 // ============================================================
 // Types
 // ============================================================
-
-export type AlertSeverity = "critical" | "warning" | "info" | "success";
-
-export type AlertType = "weight" | "height" | "bmi" | "head_circumference" | "milestone" | "vaccination";
-
-export interface GrowthAlert {
-	id: string;
-	type: AlertType;
-	severity: AlertSeverity;
-	patient: {
-		id: string;
-		name: string;
-		initials: string;
-		age: string;
-		gender?: "boy" | "girl" | "other";
-	};
-	metric: string;
-	value: string;
-	message: string;
-	recommendation?: string;
-	date: Date;
-	isResolved?: boolean;
-	resolvedAt?: Date;
-	resolvedBy?: string;
-	resolutionNote?: string;
-}
 
 // ============================================================
 // Constants

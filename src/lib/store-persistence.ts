@@ -1,5 +1,5 @@
-import { chatActions, chatStore } from "@/features/chat/utils/store";
-import { kanbanActions, kanbanStore } from "@/features/kanban/utils/store";
+import { chatStore } from "@/features/chat/utils/store";
+import { kanbanStore } from "@/features/kanban/utils/store";
 
 // ============================================================
 // Persistence Keys
@@ -59,10 +59,7 @@ export const chatPersistence = {
 	},
 
 	initialize: () => {
-		const loaded = chatPersistence.load();
-		if (!loaded) {
-			chatActions.resetChat();
-		}
+		chatPersistence.load();
 		return chatPersistence.autoSave();
 	}
 };
@@ -116,10 +113,7 @@ export const kanbanPersistence = {
 	},
 
 	initialize: () => {
-		const loaded = kanbanPersistence.load();
-		if (!loaded) {
-			kanbanActions.resetKanban();
-		}
+		kanbanPersistence.load();
 		return kanbanPersistence.autoSave();
 	}
 };

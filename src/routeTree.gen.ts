@@ -18,6 +18,7 @@ import { Route as AccountPathRouteImport } from './routes/account/$path'
 import { Route as AuthDashboardIndexRouteImport } from './routes/auth/dashboard/index'
 import { Route as AuthDashboardSettingsRouteImport } from './routes/auth/dashboard/settings'
 import { Route as AuthDashboardProfileRouteImport } from './routes/auth/dashboard/profile'
+import { Route as AuthDashboardNotificationsRouteImport } from './routes/auth/dashboard/notifications'
 import { Route as AuthDashboardKanabanRouteImport } from './routes/auth/dashboard/kanaban'
 import { Route as AuthDashboardChatRouteImport } from './routes/auth/dashboard/chat'
 import { Route as AuthDashboardAlertsRouteImport } from './routes/auth/dashboard/alerts'
@@ -100,6 +101,12 @@ const AuthDashboardProfileRoute = AuthDashboardProfileRouteImport.update({
   path: '/profile',
   getParentRoute: () => AuthDashboardRoute,
 } as any)
+const AuthDashboardNotificationsRoute =
+  AuthDashboardNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => AuthDashboardRoute,
+  } as any)
 const AuthDashboardKanabanRoute = AuthDashboardKanabanRouteImport.update({
   id: '/kanaban',
   path: '/kanaban',
@@ -323,6 +330,7 @@ export interface FileRoutesByFullPath {
   '/auth/dashboard/alerts': typeof AuthDashboardAlertsRoute
   '/auth/dashboard/chat': typeof AuthDashboardChatRoute
   '/auth/dashboard/kanaban': typeof AuthDashboardKanabanRoute
+  '/auth/dashboard/notifications': typeof AuthDashboardNotificationsRoute
   '/auth/dashboard/profile': typeof AuthDashboardProfileRoute
   '/auth/dashboard/settings': typeof AuthDashboardSettingsRoute
   '/auth/dashboard/': typeof AuthDashboardIndexRoute
@@ -369,6 +377,7 @@ export interface FileRoutesByTo {
   '/auth/dashboard/alerts': typeof AuthDashboardAlertsRoute
   '/auth/dashboard/chat': typeof AuthDashboardChatRoute
   '/auth/dashboard/kanaban': typeof AuthDashboardKanabanRoute
+  '/auth/dashboard/notifications': typeof AuthDashboardNotificationsRoute
   '/auth/dashboard/profile': typeof AuthDashboardProfileRoute
   '/auth/dashboard/settings': typeof AuthDashboardSettingsRoute
   '/auth/dashboard': typeof AuthDashboardIndexRoute
@@ -417,6 +426,7 @@ export interface FileRoutesById {
   '/auth/dashboard/alerts': typeof AuthDashboardAlertsRoute
   '/auth/dashboard/chat': typeof AuthDashboardChatRoute
   '/auth/dashboard/kanaban': typeof AuthDashboardKanabanRoute
+  '/auth/dashboard/notifications': typeof AuthDashboardNotificationsRoute
   '/auth/dashboard/profile': typeof AuthDashboardProfileRoute
   '/auth/dashboard/settings': typeof AuthDashboardSettingsRoute
   '/auth/dashboard/': typeof AuthDashboardIndexRoute
@@ -466,6 +476,7 @@ export interface FileRouteTypes {
     | '/auth/dashboard/alerts'
     | '/auth/dashboard/chat'
     | '/auth/dashboard/kanaban'
+    | '/auth/dashboard/notifications'
     | '/auth/dashboard/profile'
     | '/auth/dashboard/settings'
     | '/auth/dashboard/'
@@ -512,6 +523,7 @@ export interface FileRouteTypes {
     | '/auth/dashboard/alerts'
     | '/auth/dashboard/chat'
     | '/auth/dashboard/kanaban'
+    | '/auth/dashboard/notifications'
     | '/auth/dashboard/profile'
     | '/auth/dashboard/settings'
     | '/auth/dashboard'
@@ -559,6 +571,7 @@ export interface FileRouteTypes {
     | '/auth/dashboard/alerts'
     | '/auth/dashboard/chat'
     | '/auth/dashboard/kanaban'
+    | '/auth/dashboard/notifications'
     | '/auth/dashboard/profile'
     | '/auth/dashboard/settings'
     | '/auth/dashboard/'
@@ -664,6 +677,13 @@ declare module '@tanstack/react-router' {
       path: '/profile'
       fullPath: '/auth/dashboard/profile'
       preLoaderRoute: typeof AuthDashboardProfileRouteImport
+      parentRoute: typeof AuthDashboardRoute
+    }
+    '/auth/dashboard/notifications': {
+      id: '/auth/dashboard/notifications'
+      path: '/notifications'
+      fullPath: '/auth/dashboard/notifications'
+      preLoaderRoute: typeof AuthDashboardNotificationsRouteImport
       parentRoute: typeof AuthDashboardRoute
     }
     '/auth/dashboard/kanaban': {
@@ -1001,6 +1021,7 @@ interface AuthDashboardRouteChildren {
   AuthDashboardAlertsRoute: typeof AuthDashboardAlertsRoute
   AuthDashboardChatRoute: typeof AuthDashboardChatRoute
   AuthDashboardKanabanRoute: typeof AuthDashboardKanabanRoute
+  AuthDashboardNotificationsRoute: typeof AuthDashboardNotificationsRoute
   AuthDashboardProfileRoute: typeof AuthDashboardProfileRoute
   AuthDashboardSettingsRoute: typeof AuthDashboardSettingsRoute
   AuthDashboardIndexRoute: typeof AuthDashboardIndexRoute
@@ -1037,6 +1058,7 @@ const AuthDashboardRouteChildren: AuthDashboardRouteChildren = {
   AuthDashboardAlertsRoute: AuthDashboardAlertsRoute,
   AuthDashboardChatRoute: AuthDashboardChatRoute,
   AuthDashboardKanabanRoute: AuthDashboardKanabanRoute,
+  AuthDashboardNotificationsRoute: AuthDashboardNotificationsRoute,
   AuthDashboardProfileRoute: AuthDashboardProfileRoute,
   AuthDashboardSettingsRoute: AuthDashboardSettingsRoute,
   AuthDashboardIndexRoute: AuthDashboardIndexRoute,

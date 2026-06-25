@@ -1,4 +1,4 @@
-import { Link, useRouter } from "@tanstack/react-router";
+// components/notification-center.tsx
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
@@ -6,22 +6,29 @@ import { NotificationCard } from "@/components/ui/notification-card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-
-import { useNotificationStore } from "../utils/store";
+import { Link, useRouter } from "@tanstack/react-router";
+import { useSelector } from "@tanstack/react-store";
+import { type Notification, notificationActions, notificationStore } from "../utils/store";
 
 const MAX_VISIBLE = 5;
 
+// Updated routes for pediatric clinic app
 const actionRoutes: Record<string, string> = {
-	view: "/dashboard/overview",
-	"view-product": "/dashboard/product",
-	billing: "/dashboard/overview",
-	open: "/dashboard/kanban",
-	"open-chat": "/dashboard/chat"
+	"view-patient": "/auth/dashboard/patients",
+	"view-lab-results": "/auth/dashboard/lab-results",
+	"view-immunizations": "/auth/dashboard/immunizations",
+	"view-appointment": "/auth/dashboard/appointments",
+	"view-prescription": "/auth/dashboard/prescriptions",
+	"view-all": "/auth/dashboard/overview",
+	"add-vaccination": "/auth/dashboard/vaccinations",
+	"view-growth": "/auth/dashboard/growth-charts",
+	"view-medical-records": "/auth/dashboard/medical-records"
 };
 
 export function NotificationCenter() {
-	const { notifications, markAsRead, markAllAsRead, unreadCount } = useNotificationStore();
+	const notifications = useSelector(notificationStore, state => state.notifications);
 	const router = useRouter();
+	const { markAsRead, markAllAsRead, unreadCount } = notificationActions;
 	const count = unreadCount();
 	const visibleNotifications = notifications.slice(0, MAX_VISIBLE);
 
@@ -33,7 +40,7 @@ export function NotificationCenter() {
 					size='icon'
 					variant='ghost'
 				>
-					<Icons.notification className='h-4 w-4' />
+					<Icons.bell className='h-4 w-4' />
 					{count > 0 && (
 						<span className='absolute -top-0.5 -right-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 font-medium text-[10px] text-destructive-foreground'>
 							{count > 9 ? "9+" : count}
@@ -50,7 +57,7 @@ export function NotificationCenter() {
 				<div className='flex items-center justify-between px-4 py-3'>
 					<Link
 						className='group flex items-center gap-1'
-						to='/dashboard/notifications'
+						to='/auth/dashboard/notifications'
 					>
 						<h4 className='font-semibold text-sm group-hover:underline'>Notifications</h4>
 						<Icons.chevronRight className='h-3.5 w-3.5 text-muted-foreground transition-transform group-hover:translate-x-0.5' />
@@ -77,12 +84,13 @@ export function NotificationCenter() {
 				<ScrollArea className='h-[400px]'>
 					{notifications.length === 0 ? (
 						<div className='flex flex-col items-center justify-center py-12'>
-							<Icons.notification className='mb-2 h-8 w-8 text-muted-foreground/40' />
+							<Icons.bell className='mb-2 h-8 w-8 text-muted-foreground/40' />
 							<p className='text-muted-foreground text-sm'>No notifications yet</p>
+							<p className='text-muted-foreground/60 text-xs'>Stay updated on patient care</p>
 						</div>
 					) : (
 						<div className='flex flex-col gap-1 p-2'>
-							{visibleNotifications.map(notification => (
+							{visibleNotifications.map((notification: Notification) => (
 								<NotificationCard
 									actions={notification.actions}
 									body={notification.body}
