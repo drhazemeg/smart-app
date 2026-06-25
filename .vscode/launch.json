@@ -1,0 +1,49 @@
+{
+	"configurations": [
+		{
+			"args": ["dev"],
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"NODE_ENV": "development",
+				"PORT": "3000"
+			},
+			"internalConsoleOptions": "openOnSessionStart",
+			"name": "🚀 Start Dev Server",
+			"program": "${workspaceFolder}/node_modules/@tanstack/react-start/bin/start.js",
+			"request": "launch",
+			"stopOnEntry": false,
+			"type": "bun",
+			"watchMode": true
+		},
+		{
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"internalConsoleOptions": "openOnSessionStart",
+			"name": "🌱 Seed Database",
+			"noDebug": false,
+			"program": "${workspaceFolder}/src/db/seed.ts",
+			"request": "launch",
+			"type": "bun"
+		},
+		{
+			"cwd": "${workspaceFolder}",
+			"internalConsoleOptions": "neverOpen",
+			"name": "📄 Debug Current File",
+			"program": "${file}",
+			"request": "launch",
+			"stopOnEntry": false,
+			"type": "bun",
+			"watchMode": false
+		},
+		{
+			"name": "🔗 Attach to Bun",
+			"request": "attach",
+			"stopOnEntry": false,
+			"type": "bun",
+			"url": "ws://localhost:6499/"
+		}
+	],
+	"version": "0.2.0"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "aliases": {
+    "components": "#/components",
+    "hooks": "#/hooks",
+    "lib": "#/lib",
+    "ui": "#/components/ui",
+    "utils": "#/lib/utils"
+  },
+  "iconLibrary": "lucide",
+  "menuAccent": "bold",
+  "menuColor": "default",
+  "registries": {
+    "@shadcn-studio": "https://shadcnstudio.com/r/{name}.json",
+    "@ss-blocks": "https://shadcnstudio.com/r/blocks/{name}.json",
+    "@ss-components": "https://shadcnstudio.com/r/components/{name}.json",
+    "@ss-themes": "https://shadcnstudio.com/r/themes/{name}.json"
+  },
+  "rsc": false,
+  "rtl": true,
+  "style": "radix-nova",
+  "tailwind": {
+    "baseColor": "zinc",
+    "config": "",
+    "css": "src/styles.css",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "tsx": true
+}
