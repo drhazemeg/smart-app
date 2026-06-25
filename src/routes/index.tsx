@@ -1,7 +1,7 @@
 // src/routes/index.tsx
 
-import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icons } from "@/components/ui/icons";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
 	component: Home
@@ -17,27 +17,31 @@ function Home() {
 						className='flex items-center gap-2.5'
 						to='/'
 					>
-						<Icons.heart className='h-8 w-8 text-[#f07e9c]' />
+						<img
+							alt='Smart Kids Pediatric Care'
+							className='h-10 w-auto'
+							src='/logo.svg'
+						/>{" "}
 						<span className='font-semibold text-[#1b4b6b] text-xl'>
-							Bright Kids <span className='font-normal text-[#3eb6b4]'>Pediatric Care</span>
+							Smart Kids <span className='font-normal text-[#3eb6b4]'>Pediatric Care</span>
 						</span>
 					</Link>
 
 					<nav className='hidden items-center gap-7 md:flex'>
 						{[
-							{ label: "Home", href: "#home" },
-							{ label: "Our Services", href: "#services" },
-							{ label: "About Us", href: "#about" },
-							{ label: "Testimonials", href: "#testimonials" },
-							{ label: "Contact", href: "#contact" }
+							{ label: "Home", href: "/" },
+							{ label: "About", href: "/about" },
+							{ label: "Services", href: "/services" },
+							{ label: "Testimonials", href: "/testimonials" },
+							{ label: "Contact", href: "/contact" }
 						].map(link => (
-							<a
+							<Link
 								className='font-medium text-[#1b4b6b] text-sm transition-colors hover:text-[#3eb6b4]'
-								href={link.href}
 								key={link.href}
+								to={link.href}
 							>
 								{link.label}
-							</a>
+							</Link>
 						))}
 					</nav>
 

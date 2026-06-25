@@ -1,5 +1,5 @@
 // db/queries/visit.repo.ts - NEW FILE
-import { type DBorTx, db } from "@/db/client";
+import { type DBorTx, db } from "#/db/client.server";
 
 export const visitRepo = {
 	async getVisits(limit = 100, tx?: DBorTx) {

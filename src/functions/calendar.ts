@@ -1,9 +1,9 @@
 // db/repositories/calendar.repo.ts
 
+import { db } from "#/db/client.server";
+import { calendarRepo } from "@/db/queries";
 import { createServerFn } from "@tanstack/react-start";
 import z from "zod";
-import { db } from "@/db/client";
-import { calendarRepo } from "@/db/queries";
 import type { getBookedSlotsForDoctor } from "./appointment";
 
 // =======================
@@ -416,9 +416,9 @@ export {
 	checkSlotAvailability,
 	createAppointmentReminders,
 	getAvailableTimeSlotsForDay,
-	type getBookedSlotsForDoctor,
 	getConflictingAppointments,
 	getDoctorScheduleForMonth,
 	getDoctorWeeklySchedule,
-	getDoctorWorkingHours
+	getDoctorWorkingHours,
+	type getBookedSlotsForDoctor
 };

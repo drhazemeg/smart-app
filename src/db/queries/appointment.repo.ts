@@ -1,5 +1,6 @@
 // db/repositories/appointment.repo.ts
 
+import { generateId } from "@/utils/id";
 import {
 	and,
 	type Column,
@@ -14,11 +15,10 @@ import {
 	ne,
 	or,
 	type SQL,
-	type SQLWrapper,
-	sql
+	sql,
+	type SQLWrapper
 } from "drizzle-orm";
-import { generateId } from "@/utils/id";
-import { type DBorTx, db } from "../client";
+import { db, type DBorTx } from "../client.server";
 import * as schema from "../schema";
 import type { AppointmentCreateInput, UpdateAppointmentInput } from "../zod";
 

@@ -4,7 +4,7 @@
 // Clinical data seeding (Appointments, Medical Records, Prescriptions, Payments, etc.)
 
 import { faker } from "@faker-js/faker";
-import type { DB } from "../client";
+import type { DB } from "../client.server";
 import {
 	appointment,
 	diagnosis,

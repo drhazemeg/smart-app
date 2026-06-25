@@ -4,7 +4,7 @@
 // Core data seeding (Users, Clinics, Patients, Doctors, Staff)
 
 import { faker } from "@faker-js/faker";
-import type { DB } from "../client";
+import type { DB } from "../client.server";
 import {
 	clinic,
 	clinicMember,

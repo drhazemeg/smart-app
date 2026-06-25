@@ -1,7 +1,7 @@
 // Repository for patient registration logic
 
+import { type DBorTx, db } from "#/db/client.server";
 import { z } from "zod";
-import { type DBorTx, db } from "@/db/client";
 // Assuming age calculator is available in a shared lib or utils
 import { ageCalculator } from "@/utils/age-calculator";
 import * as schema from "../schema";

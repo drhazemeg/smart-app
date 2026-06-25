@@ -1,7 +1,7 @@
 // db/querries/calendar.repo.ts
 
+import { type DBorTx, db } from "#/db/client.server";
 import { and, eq, ne, sql } from "drizzle-orm";
-import { type DBorTx, db } from "@/db/client";
 import * as schema from "../schema";
 import type { Weekday } from "../zod";
 

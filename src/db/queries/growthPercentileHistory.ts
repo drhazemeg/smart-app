@@ -1,7 +1,7 @@
 // Server functions for growth percentile history table
 
+import { type DBorTx, db } from "#/db/client.server";
 import { eq } from "drizzle-orm";
-import { type DBorTx, db } from "@/db/client";
 
 import * as schema from "../schema";
 

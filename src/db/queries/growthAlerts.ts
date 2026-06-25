@@ -1,5 +1,5 @@
+import { type DBorTx, db } from "#/db/client.server";
 import { eq, sql } from "drizzle-orm";
-import { type DBorTx, db } from "@/db/client";
 
 import * as schema from "../schema";
 

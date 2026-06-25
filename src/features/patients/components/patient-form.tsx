@@ -1,12 +1,11 @@
 // products/patients/components/patient-form.tsx
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useAppForm, useFormFields } from "@/components/ui/tanstack-form";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "@tanstack/react-router";
 import { toast } from "sonner";
 import * as z from "zod";
-import { PatientCreateSchema } from "#/db";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useAppForm, useFormFields } from "@/components/ui/tanstack-form";
 import { createPatientMutation, updatePatientMutation } from "../api/mutations";
 import type { Patient, PatientMutationPayload } from "../api/types";
 import { bloodGroupOptions, genderOptions, maritalStatusOptions, relationOptions } from "../constants/patient-options";

@@ -4,7 +4,7 @@ import * as path from "node:path";
 
 import { eq } from "drizzle-orm";
 
-import type { DB as AppDb } from "../client";
+import type { DB as AppDb } from "../client.server";
 import { type DrugRoute, doseGuideline, drug as drugs } from "../schema";
 
 /* =======================

@@ -1,17 +1,16 @@
 // features/encounters/components/EncounterForm.tsx
 
-import { useMutation, useSuspenseQuery } from "@tanstack/react-query";
-import { useRouter } from "@tanstack/react-router";
-import { useState } from "react";
-import { toast } from "sonner";
-import * as z from "zod";
-import { DiagnosisCreateSchema } from "#/db";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAppForm, useFormFields } from "@/components/ui/tanstack-form";
 import { getDoctorsQueryOptions } from "@/features/doctors/api/queries";
 import { getPatientsQueryOptions } from "@/features/patients/api/queries";
+import { useMutation, useSuspenseQuery } from "@tanstack/react-query";
+import { useRouter } from "@tanstack/react-router";
+import { useState } from "react";
+import { toast } from "sonner";
+import * as z from "zod";
 import { createEncounterMutation, updateEncounterMutation } from "../api/mutations";
 import type { Encounter, EncounterMutationPayload } from "../api/type";
 import {

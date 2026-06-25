@@ -1,13 +1,13 @@
 // components/notification-center.tsx
 
+import { Link, useRouter } from "@tanstack/react-router";
+import { useSelector } from "@tanstack/react-store";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { NotificationCard } from "@/components/ui/notification-card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { Link, useRouter } from "@tanstack/react-router";
-import { useSelector } from "@tanstack/react-store";
 import { type Notification, notificationActions, notificationStore } from "../utils/store";
 
 const MAX_VISIBLE = 5;

@@ -1,7 +1,7 @@
 // Server functions for growth chart data aggregation
 
+import { type DBorTx, db } from "#/db/client.server";
 import z from "zod";
-import { type DBorTx, db } from "@/db/client";
 
 // =======================
 // Zod Validators

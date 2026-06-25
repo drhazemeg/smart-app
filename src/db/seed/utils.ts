@@ -4,7 +4,7 @@
 // Utility functions for seeding
 
 import { faker } from "@faker-js/faker";
-import type { DB } from "../client";
+import type { DB } from "../client.server";
 import {
 	account,
 	appointment,

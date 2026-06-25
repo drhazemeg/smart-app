@@ -1,10 +1,5 @@
 // src/features/dashboard/components/GrowthAlertsWidget.tsx
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import { Link } from "@tanstack/react-router";
 import { format } from "date-fns";
 import {
@@ -18,6 +13,11 @@ import {
 	TrendingUp,
 	User
 } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import type { AlertSeverity, AlertType, GrowthAlert } from "../types";
 
 // ============================================================

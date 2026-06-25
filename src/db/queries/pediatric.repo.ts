@@ -1,9 +1,9 @@
 // db/repositories/clinic.repo.ts
 
+import { type DBorTx, db } from "#/db/client.server";
+import { ageCalculator } from "@/utils/age-calculator";
 import type { SQL } from "drizzle-orm";
 import { and, between, eq, gte, inArray, lte, sql } from "drizzle-orm";
-import { type DBorTx, db } from "@/db/client";
-import { ageCalculator } from "@/utils/age-calculator";
 import * as schema from "../schema";
 import type {
 	AdverseEventCreateInput,

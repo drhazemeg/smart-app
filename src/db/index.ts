@@ -1,5 +1,5 @@
 // 1. Export the database client and types from your client setup
-export * from "./client";
+export * from "./client.server";
 
 // 2. Import everything from your new schema directory
 // This provides access to all table definitions for queries/actions

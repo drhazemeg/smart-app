@@ -1,14 +1,13 @@
 // products/doctors/components/doctor-schedule.tsx
 
-import { useMutation, useSuspenseQuery } from "@tanstack/react-query";
-import { useState } from "react";
-import { toast } from "sonner";
-import { WorkingDayCreateSchema } from "#/db";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useAppForm, useFormFields } from "@/components/ui/tanstack-form";
 import { Toggle } from "@/components/ui/toggle";
+import { useMutation, useSuspenseQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import { toast } from "sonner";
 import { saveWorkingDaysMutation } from "../api/mutations";
 import { workingDaysOptions } from "../api/queries";
 import type { WeekDay, WorkingDay } from "../api/types";
@@ -48,7 +47,7 @@ export default function DoctorSchedule({ doctorId }: DoctorScheduleProps) {
 			isActive: true
 		} as ScheduleFormValues,
 		validators: {
-			onSubmit: WorkingDayCreateSchema
+			onSubmit: scheduleFormSchema
 		},
 		onSubmit: ({ value }) => {
 			const existingDays = workingDaysData || [];

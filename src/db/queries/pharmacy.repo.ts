@@ -1,7 +1,7 @@
 // db/repositories/clinic.repo.ts
 
+import { db } from "#/db/client.server";
 import { eq, inArray, type SQL, sql } from "drizzle-orm";
-import { db } from "@/db/client";
 
 import * as schema from "../schema";
 import type {

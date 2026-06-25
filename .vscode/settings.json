@@ -319,5 +319,6 @@
 	// ========== WORKBENCH ==========
 	"workbench.startupEditor": "none",
 	"workbench.tree.indent": 16,
-	"workbench.tree.renderIndentGuides": "always"
+	"workbench.tree.renderIndentGuides": "always",
+	"typescript.tsdk": "node_modules/typescript/lib"
 }

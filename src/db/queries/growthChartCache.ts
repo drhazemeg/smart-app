@@ -1,7 +1,7 @@
 // Repository for growth chart cache table
 
+import { db } from "#/db/client.server";
 import { eq, lt } from "drizzle-orm";
-import { db } from "@/db/client";
 import * as schema from "../schema";
 
 // =======================

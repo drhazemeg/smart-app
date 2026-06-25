@@ -1,5 +1,5 @@
 import { and, eq, sql } from "drizzle-orm";
-import { type DBorTx, db } from "../client";
+import { type DBorTx, db } from "../client.server";
 import * as schema from "../schema";
 import type { DbAppointment } from "../zod";
 

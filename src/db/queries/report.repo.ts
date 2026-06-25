@@ -1,9 +1,9 @@
 // queries/reporting.repo.ts
 /** biome-ignore-all lint/suspicious/noExplicitAny: <ok> */
 
+import { type DBorTx, db } from "#/db/client.server";
 import { format } from "date-fns";
 import { and, eq, gte, lte } from "drizzle-orm";
-import { type DBorTx, db } from "@/db/client";
 
 import * as schema from "../schema";
 import type { PaymentStatus } from "../zod";

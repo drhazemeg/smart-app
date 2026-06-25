@@ -2,7 +2,7 @@ import { randomUUID } from "node:crypto";
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-import type { DB as AppDb } from "../client";
+import type { DB as AppDb } from "../client.server";
 import { type Gender, whoGrowthStandard } from "../schema";
 
 const ZSCORE_DATA_PATH = path.join(import.meta.dirname, "../../../../data/zscore-wfa.json");

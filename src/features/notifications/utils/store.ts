@@ -1,8 +1,8 @@
 // utils/store.ts
 
-import type { NotificationAction, NotificationStatus } from "@/components/ui/notification-card";
 import { useSelector } from "@tanstack/react-store";
 import { createStore } from "@tanstack/store";
+import type { NotificationAction, NotificationStatus } from "@/components/ui/notification-card";
 
 export type Notification = {
 	id: string;

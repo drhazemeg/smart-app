@@ -1,13 +1,13 @@
 // components/notifications-page.tsx
 
+import { useRouter } from "@tanstack/react-router"; // Keep this line
+import { useSelector } from "@tanstack/react-store";
 import { Icons } from "@/components/icons";
 import PageContainer from "@/components/layout/page-container";
 import { Button } from "@/components/ui/button";
 import { NotificationCard } from "@/components/ui/notification-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useRouter } from "@tanstack/react-router"; // Keep this line
 import { notificationActions, notificationStore } from "../utils/store";
-import { useSelector } from "@tanstack/react-store";
 
 // Updated routes for pediatric clinic
 const actionRoutes: Record<string, string> = {

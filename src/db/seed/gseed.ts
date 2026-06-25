@@ -2,7 +2,7 @@
 /** biome-ignore-all lint/performance/useTopLevelRegex: <ok> */
 import fs from "node:fs";
 import path from "node:path";
-import { db } from "../client";
+import { db } from "../client.server";
 import { type InsertLMSReference, lmsReference } from "../schema";
 
 async function seedLMSDataEngine() {

@@ -167,7 +167,7 @@ export const ClinicalDashboard = memo(function ClinicalDashboard({
 						</CardTitle>
 						<CardDescription>Today's schedule and upcoming visits</CardDescription>
 					</CardHeader>
-					<CardContent className='max-h-[400px] space-y-3 overflow-y-auto'>
+					<CardContent className='max-h-100 space-y-3 overflow-y-auto'>
 						{upcomingAppointments.length === 0 ? (
 							<p className='py-6 text-center text-muted-foreground text-sm'>No upcoming appointments</p>
 						) : (
@@ -229,7 +229,7 @@ export const ClinicalDashboard = memo(function ClinicalDashboard({
 						</CardTitle>
 						<CardDescription>Vaccinations due or overdue</CardDescription>
 					</CardHeader>
-					<CardContent className='max-h-[400px] space-y-3 overflow-y-auto'>
+					<CardContent className='max-h-100 space-y-3 overflow-y-auto'>
 						{dueImmunizations.length === 0 ? (
 							<div className='py-6 text-center'>
 								<HeartPulse className='mx-auto h-8 w-8 text-emerald-500' />
@@ -280,7 +280,7 @@ export const ClinicalDashboard = memo(function ClinicalDashboard({
 						</CardTitle>
 						<CardDescription>Newly registered children</CardDescription>
 					</CardHeader>
-					<CardContent className='max-h-[400px] space-y-3 overflow-y-auto'>
+					<CardContent className='max-h-100 space-y-3 overflow-y-auto'>
 						{(recentPatients?.patients?.length ?? 0) === 0 ? (
 							<p className='py-6 text-center text-muted-foreground text-sm'>No recent patients</p>
 						) : (
@@ -322,7 +322,7 @@ export const ClinicalDashboard = memo(function ClinicalDashboard({
 						</CardTitle>
 						<CardDescription>Latest consultations and diagnoses</CardDescription>
 					</CardHeader>
-					<CardContent className='max-h-[400px] space-y-3 overflow-y-auto'>
+					<CardContent className='max-h-100 space-y-3 overflow-y-auto'>
 						{recentEncounters.length === 0 ? (
 							<p className='py-6 text-center text-muted-foreground text-sm'>No recent encounters</p>
 						) : (

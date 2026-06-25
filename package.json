@@ -123,6 +123,7 @@
     "email:dev": "email dev --dir src/components/emails --port 5555",
     "format": "biome format --write",
     "gen": "bun generate ",
+    "add:users": "bun run ./src/db/users.ts",
     "generate": "bunx @tanstack/router-cli generate ",
     "generate-routes": "tsr generate",
     "intent:install": "bunx  @tanstack/intent@latest install",

@@ -1,7 +1,7 @@
 // db/repositories/auth.repo.ts
 
+import { type DBorTx, db } from "#/db/client.server";
 import { count, eq, inArray } from "drizzle-orm";
-import { type DBorTx, db } from "@/db/client";
 
 import * as schema from "../schema";
 import type {

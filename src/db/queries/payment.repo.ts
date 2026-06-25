@@ -1,7 +1,7 @@
 // queries/payment.repo.ts
 
+import { db, type DBorTx } from "#/db/client.server";
 import { and, count, desc, eq, gte, ilike, lte, or, type SQL, sql } from "drizzle-orm";
-import { type DBorTx, db } from "@/db/client";
 
 import * as schema from "../schema";
 

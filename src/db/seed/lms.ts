@@ -5,7 +5,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import type { DB } from "../client";
+import type { DB } from "../client.server";
 import { type InsertLMSReference, lmsReference } from "../schema";
 
 export async function seedLMSData(db: DB) {

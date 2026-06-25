@@ -3,7 +3,7 @@
 // ============================================
 // Growth chart data generator for patient charts
 
-import type { DB } from "../client";
+import type { DB } from "../client.server";
 import type { Measurement } from "../schema";
 
 export interface GrowthChartData {

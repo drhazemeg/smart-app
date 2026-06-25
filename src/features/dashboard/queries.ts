@@ -164,7 +164,7 @@ async function fetchGrowthAlerts(): Promise<GrowthAlert[]> {
 				initials: `${enc.patientFirstName?.[0] ?? ""}${enc.patientLastName?.[0] ?? ""}`.toUpperCase(),
 				age: ""
 			},
- 			metric: "WEIGHT",
+			metric: "WEIGHT",
 			value: String(enc.diagnosis ?? "—"),
 			message: enc.diagnosis ?? "No diagnosis recorded",
 			date: new Date(enc.date),

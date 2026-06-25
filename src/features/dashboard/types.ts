@@ -2,7 +2,6 @@ export type AlertSeverity = "critical" | "warning" | "info" | "success";
 
 export type AlertType = "weight" | "height" | "bmi" | "head_circumference" | "milestone" | "vaccination";
 
-
 export interface GrowthAlert {
 	id: string;
 	type: AlertType;

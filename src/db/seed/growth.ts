@@ -3,7 +3,7 @@
 // ============================================
 // Growth chart data generator for patient charts
 import { faker } from "@faker-js/faker";
-import type { DB } from "../client";
+import type { DB } from "../client.server";
 import { growthAlert, type lmsReference, measurement } from "../schema";
 import type { DbPatient, ReferenceSource } from "../zod";
 import type { CoreData } from "./core";

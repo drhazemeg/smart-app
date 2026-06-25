@@ -2,7 +2,7 @@
 // FILE: src/db/seed/index.ts
 // ============================================
 // Main seed orchestration file
-import { db } from "../client";
+import { db } from "../client.server";
 import { type ClinicalData, seedClinicalData } from "./clinic";
 import { type CoreData, seedCoreData } from "./core";
 import { type GrowthData, seedGrowthData } from "./growth";

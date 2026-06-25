@@ -1,8 +1,8 @@
 // db/repositories/patient.repo.ts
 
-import { and, count, eq, inArray, sql } from "drizzle-orm";
-import { db } from "@/db/client";
+import { db } from "#/db/client.server";
 import { ageCalculator } from "@/utils/age-calculator";
+import { and, count, eq, inArray, sql } from "drizzle-orm";
 import * as schema from "../schema";
 import type { GuardianCreateInput, GuardianUpdateInput, PatientCreateInput, PatientUpdateInput } from "../zod";
 

@@ -1,9 +1,9 @@
+import { db } from "#/db/client.server";
+import * as schema from "@/db/schema";
+import { DiagnosisCreateSchema, DiagnosisUpdateSchema } from "@/db/zod";
 import { createServerFn } from "@tanstack/react-start";
 import { and, count, eq, gte, ilike, lte, or } from "drizzle-orm";
 import z from "zod";
-import { db } from "@/db/client";
-import * as schema from "@/db/schema";
-import { DiagnosisCreateSchema, DiagnosisUpdateSchema } from "@/db/zod";
 
 // Matches the appointmentStatusEnum used in the diagnosis table
 type DiagnosisStatus = "PENDING" | "CONFIRMED" | "COMPLETED" | "CANCELLED" | "NO_SHOW";

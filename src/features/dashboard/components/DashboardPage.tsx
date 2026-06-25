@@ -21,7 +21,7 @@ export function DashboardPage() {
 
 	if (!data) {
 		return (
-			<div className='flex h-[400px] items-center justify-center'>
+			<div className='flex h-100 items-center justify-center'>
 				<div className='text-center'>
 					<p className='text-muted-foreground'>Failed to load dashboard data</p>
 					<Button

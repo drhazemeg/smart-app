@@ -1,7 +1,7 @@
 // db/repositories/doctor.repo.ts
 
+import { db, type DBorTx } from "#/db/client.server";
 import { and, count, eq, ilike, inArray, or, type SQL } from "drizzle-orm";
-import { type DBorTx, db } from "@/db/client";
 
 import * as schema from "../schema";
 import type { DoctorCreateInput, DoctorUpdateInput, WorkingDayCreateInput, WorkingDayUpdateInput } from "../zod";
